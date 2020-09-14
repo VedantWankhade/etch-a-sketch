@@ -6,11 +6,9 @@
 
 body {
     text-align: center;
-    border: 1px solid red;
 }
 
 .container {
-    border: 1px solid green;
     height: 99vh;
     display: flex;
     justify-content: center;
@@ -18,12 +16,13 @@ body {
 }
 
 .slate {
-    border: 1px dashed black;
     height: 90%;
     background-color: brown;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    padding: 0.5em;
+    border-radius: 1em;
     width: 70%;
 }
 
@@ -33,16 +32,38 @@ body {
     background-color: white;
     height: 87%;
     width: 90%;
+    border-radius: 1em;
+    padding: 2px;
 }
 
 .options {
-    background-color: green;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }
 
+.clear, .color {
+    border-radius: 50%;
+    padding: 1em;
+    background-color: rgb(192, 113, 113);
+    border: 2px solid brown;
+}
+
+.options > button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
 .pix {
     background-color: #fff;
+    border-radius: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
+.clicked {
+    background-color: white;
 }

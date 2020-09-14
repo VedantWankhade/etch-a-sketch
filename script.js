@@ -1,16 +1,20 @@
-const gridContainer = document.querySelector(".grid-container");
 const colorButton = document.querySelector(".color");
 
+var gridContainer = document.querySelector(".grid-container");
 let clicked = false;
 
 colorButton.addEventListener('click', () => {
     if (clicked) {
         clicked = false;
-    } else 
-    clicked = true;
-})
 
-function createGrid(n) {
+        colorButton.classList.remove("clicked");
+    } else {
+        clicked = true;
+        colorButton.classList.add("clicked");
+    }
+});
+
+function createGrid(n = 64) {
 
     let gridWidth = gridContainer.offsetWidth;
     let gridHeight = gridContainer.offsetHeight;
@@ -30,13 +34,14 @@ function createGrid(n) {
 
         pix.addEventListener("mouseover", function(event) {
 
-            if (clicked === true) { 
-                color = getRandomColor();
-            } else {
-                color = 'black';
-            }
-            event.target.style.backgroundColor = color;
-
+        
+                if (clicked === true) { 
+                    color = getRandomColor();
+                } else {
+                    color = 'black';
+                }
+                event.target.style.backgroundColor = color;
+            
         });
     }
 }
@@ -49,4 +54,22 @@ function getRandomColor() {
 
     return `rgb(${x}, ${y}, ${z})`;
 }
-createGrid(16);
+
+const clearButton = document.querySelector(".clear");
+
+createGrid();
+
+clearButton.addEventListener("click", () => {
+    let n = prompt("Enter the grid size");
+    resetGrid();
+    createGrid(n);
+});
+
+function resetGrid() {
+
+    let list = gridContainer.childNodes;
+    console.log(list);
+    for (let i = 1; i < list.length; i++) {
+       list[i].classList.add("hidden");
+    }
+}

@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    border: 1px solid red;
+}
+
+.container {
+    border: 1px solid green;
+    height: 99vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slate {
+    border: 1px dashed black;
+    height: 90%;
+    background-color: brown;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 70%;
+}
+
+.grid-container {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    height: 87%;
+    width: 90%;
+}
+
+.options {
+    background-color: green;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.pix {
+    background-color: #fff;
+}
